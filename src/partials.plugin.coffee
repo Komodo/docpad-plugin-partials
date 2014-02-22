@@ -151,9 +151,11 @@ module.exports = (BasePlugin) ->
 
 			# Apply
 			templateData.partial = (partialName, objs...) ->
-				# Reference others
 				config = me.getConfig()
-				@referencesOthers?()
+				
+				# Reference others
+				unless config.referenceOthers == false
+					@referencesOthers?()
 
 				# Prepare
 				file = @documentModel
