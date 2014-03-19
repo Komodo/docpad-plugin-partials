@@ -106,7 +106,7 @@
             return next(err);
           }
           if (partial.data.renderAfter) {
-            partial.data.renderAfter(result);
+            result = partial.data.renderAfter(result);
           }
           if (cacheable === true) {
             partialsCache[partial.code] = result;
