@@ -131,6 +131,9 @@ module.exports = (BasePlugin) ->
 				# Check
 				return next(err)  if err
 
+				if partial.data.renderAfter
+					partial.data.renderAfter result
+
 				# Cache
 				if cacheable is true
 					partialsCache[partial.code] = result
