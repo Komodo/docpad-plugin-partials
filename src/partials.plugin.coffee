@@ -132,7 +132,7 @@ module.exports = (BasePlugin) ->
 				return next(err)  if err
 
 				if partial.data.renderAfter
-					partial.data.renderAfter result
+					result = partial.data.renderAfter result
 
 				# Cache
 				if cacheable is true
